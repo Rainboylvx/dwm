@@ -19,6 +19,18 @@ necessary as root):
     make clean install
 
 
+## pathes
+
+- [dwm-alpha-20201019-61bb8b2.diff](./patches/dwm-alpha-20201019-61bb8b2.diff)
+- [dwm-autostart-20200610-cb3f58a.diff](./patches/dwm-autostart-20200610-cb3f58a.diff)
+- [dwm-fullscreen-6.2.diff](./patches/dwm-fullscreen-6.2.diff)
+- [dwm-hide_vacant_tags-6.2.diff](./patches/dwm-hide_vacant_tags-6.2.diff)
+- [dwm-noborder-6.2.diff](./patches/dwm-noborder-6.2.diff)
+- [dwm-scratchpad-6.2.diff](./patches/dwm-scratchpad-6.2.diff)
+- [dwm-vanitygaps-20200610-f09418b.diff](./patches/dwm-vanitygaps-20200610-f09418b.diff)
+
+autostart 的脚本在`~/.dwm/autostart.sh `
+
 Running dwm
 -----------
 Add the following line to your .xinitrc to start dwm using startx:
