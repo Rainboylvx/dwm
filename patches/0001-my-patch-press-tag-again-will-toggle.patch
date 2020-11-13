@@ -1,0 +1,41 @@
+diff --git a/config.h b/config.h
+index 2cb7078..e8a2245 100644
+--- a/config.h
++++ b/config.h
+@@ -58,7 +58,7 @@ static const Layout layouts[] = {
+ /* key definitions */
+ #define MODKEY Mod4Mask
+ #define TAGKEYS(KEY,TAG) \
+-	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
++	{ MODKEY,                       KEY,      again_view_will_toggle,           {.ui = 1 << TAG} }, \
+ 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+ 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
+ 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+diff --git a/dwm.c b/dwm.c
+index 2d49024..8900553 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -250,6 +250,7 @@ static void updatetitle(Client *c);
+ static void updatewindowtype(Client *c);
+ static void updatewmhints(Client *c);
+ static void view(const Arg *arg);
++static void again_view_will_toggle(const Arg *arg);
+ static void viewtoleft(const Arg *arg);
+ static void viewtoright(const Arg *arg);
+ static Client *wintoclient(Window w);
+@@ -2357,6 +2358,15 @@ view(const Arg *arg)
+ 	arrange(selmon);
+ }
+ 
++void again_view_will_toggle(const Arg *arg){
++	if ((arg->ui & TAGMASK) == selmon->tagset[selmon->seltags]){
++	    Arg newarg = {.ui = selmon->tagset[(selmon->seltags)^1]};
++	    view(&newarg);
++	}
++	else
++        view(arg);
++}
++
+ void
+ viewtoleft(const Arg *arg) {
+ 	if(__builtin_popcount(selmon->tagset[selmon->seltags] & TAGMASK) == 1

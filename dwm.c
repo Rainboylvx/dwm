@@ -250,6 +250,7 @@ static void updatetitle(Client *c);
 static void updatewindowtype(Client *c);
 static void updatewmhints(Client *c);
 static void view(const Arg *arg);
+static void again_view_will_toggle(const Arg *arg);
 static void viewtoleft(const Arg *arg);
 static void viewtoright(const Arg *arg);
 static Client *wintoclient(Window w);
@@ -2355,6 +2356,15 @@ view(const Arg *arg)
 		selmon->tagset[selmon->seltags] = arg->ui & TAGMASK;
 	focus(NULL);
 	arrange(selmon);
+}
+
+void again_view_will_toggle(const Arg *arg){
+	if ((arg->ui & TAGMASK) == selmon->tagset[selmon->seltags]){
+	    Arg newarg = {.ui = selmon->tagset[(selmon->seltags)^1]};
+	    view(&newarg);
+	}
+	else
+        view(arg);
 }
 
 void
