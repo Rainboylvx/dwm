@@ -33,6 +33,8 @@ necessary as root):
 
 autostart 的脚本在`~/.dwm/autostart.sh `
 
+使用的字体：[Yahei-Fira-Icon-Hybrid-Font](https://github.com/HanleyLee/Yahei-Fira-Icon-Hybrid-Font);wq
+
 ## 我的快捷键
 
 | 快捷键                                                 | 说明                                     |
