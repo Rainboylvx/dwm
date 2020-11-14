@@ -28,8 +28,14 @@ necessary as root):
 - [dwm-noborder-6.2.diff](./patches/dwm-noborder-6.2.diff)
 - [dwm-scratchpad-6.2.diff](./patches/dwm-scratchpad-6.2.diff)
 - [dwm-vanitygaps-20200610-f09418b.diff](./patches/dwm-vanitygaps-20200610-f09418b.diff)
+- [dwm-focusadjacenttag-6.0.diff](./patches/dwm-focusadjacenttag-6.0.diff) 
+- [我自制的补丁，第二次按tag会回到上一个tag](./patches/0001-my-patch-press-tag-again-will-toggle.patch)
 
 autostart 的脚本在`~/.dwm/autostart.sh `
+
+## 我的快捷键
+
+
 
 Running dwm
 -----------
