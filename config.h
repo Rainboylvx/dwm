@@ -32,7 +32,8 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
+/*static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };*/
+static const char *tags[] = { "1:", "2:", "3:", "4:", "5:", "6:", "7:", "8:", "9:" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -53,7 +54,7 @@ static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "",      tile },    /* first entry is default */
 	{ "",      NULL },    /* no layout function means floating behavior */
-	{ "",      monocle },
+	{ "[m]",      monocle },
 };
 
 /* key definitions */
@@ -111,7 +112,7 @@ static Key keys[] = {
 	/*{ MODKEY|ShiftMask,             XK_o,      incrovgaps,     {.i = -1 } },*/
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY,                       XK_q,      killclient,     {0} },
+	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -140,7 +141,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	/*{ MODKEY|ShiftMask,             XK_q,      quit,           {0}}, */
+	
 };
 
 /* button definitions */
