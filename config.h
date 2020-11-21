@@ -16,7 +16,9 @@ static const char *altbarclass      = "Polybar"; /* Alternate bar class name */
 static const char *alttrayname      = "tray";    /* Polybar tray instance name */
 static const char *altbarcmd        = "$HOME/bar.sh"; /* Alternate bar launch command */
 
-static const char *fonts[]          = { "YaHei Fira Icon Hybrid:size=16" };
+static const char *fonts[]          = { "YaHei Fira Icon Hybrid:size=15" };
+/*static const char fonts[] = "-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1" ","  [> For Iconic Glyphs <]*/
+                           /*"-*-tamsyn-medium-r-normal-*-12-*-*-*-*-*-*-1";                   [> For Normal Text <]*/
 static const char dmenufont[]       = "YaHei Fira Icon Hybrid:size=20";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -37,8 +39,8 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-/*static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };*/
-static const char *tags[] = { "1:", "2:", "3:", "4:", "5:", "6:", "7:", "8:", "9:" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "", "" };
+/*static const char *tags[] = { "1:", "2:", "3:", "4:", "5:", "6:", "7:", "8:", "9:" };*/
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -57,8 +59,8 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "",      tile },    /* first entry is default */
-	{ "",      NULL },    /* no layout function means floating behavior */
+	{ "",      tile },    /* first entry is default */
+	{ "",      NULL },    /* no layout function means floating behavior */
 	{ "[m]",      monocle },
 };
 
